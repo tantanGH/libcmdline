@@ -1,5 +1,5 @@
 # libcmdline
-Simple command line parser library for X68k
+A simple command line parser library for X68k(Human68k)
 
 elf2x68k + newlib環境向けの引数クオート対応コマンドライン解析ライブラリです。
 
@@ -38,7 +38,7 @@ my_app/
 
 ヘッダー検索パスとライブラリ検索パスをMakefile内で
 ```
--I../libs/libmxdrv/include
--L../libs/libmxdrv/lib
+-I../libs/libcmdline/include
+-L../libs/libcmdline/lib
 ```
 のように指定し、`-lcmdline` でリンクできます。
