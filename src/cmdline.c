@@ -20,8 +20,10 @@ static void do_parse(void) {
 
     /* Set argv[0]: Executable name from PDB */
     s_argv[s_argc++] = b_ptr;
-    strncpy(b_ptr, (char*)psp->exe_name, 23);
-    b_ptr[23] = '\0';
+    strncpy(b_ptr, (char*)psp->exe_path, 67);
+    b_ptr[67] = '\0';
+    strncat(b_ptr, (char*)psp->exe_name, 23);
+    b_ptr[MAX_CMDLINE-1] = '\0';
     b_ptr += strlen(b_ptr) + 1;
 
     int len = psp->comline->len;
