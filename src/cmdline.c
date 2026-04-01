@@ -24,10 +24,8 @@ static void do_parse(void) {
     b_ptr[23] = '\0';
     b_ptr += strlen(b_ptr) + 1;
 
-    /* Get command line from PDB (comline[0] is length, [1] is start of string) */
-    unsigned char* comline = (unsigned char*)psp->comline;
-    int len = comline[0];
-    char* p = (char*)&comline[1];
+    int len = psp->comline->len;
+    char* p = psp->comline->buffer;
     char* end = p + len;
     
     int in_quote = 0;
